@@ -59,17 +59,17 @@
 
 ### Тести для Користувацької історії 2 (TDD) ⚠️
 
-- [ ] T013 [P] [US2] Створити контрактний тест схеми книги Excel у [tests/contract/test_excel_schema.py](file:///d:/2/tests/contract/test_excel_schema.py) (перевірка назв 3 аркушів, точної послідовності колонок, форматів чисел та автофільтрів відповідно до [contracts/excel_schema.md](file:///d:/2/specs/001-bond-yield-analyzer/contracts/excel_schema.md))
-- [ ] T014 [P] [US2] Створити модульні тести сервісу збереження у [tests/unit/test_excel_storage.py](file:///d:/2/tests/unit/test_excel_storage.py) (автоматичне створення файлу з нуля, оновлення існуючого файлу, перевірка правила дедуплікації для «Історії котирувань», збереження виплат за складеним ключем `ISIN + Дата + Тип`)
-- [ ] T015 [P] [US2] Створити інтеграційний тест транзакційності та блокування файлу у [tests/integration/test_file_locking.py](file:///d:/2/tests/integration/test_file_locking.py) (захист від пошкодження, перехоплення `PermissionError` при відкритому файлі, видалення `.bonds.xlsx.tmp`)
+- [x] T013 [P] [US2] Створити контрактний тест схеми книги Excel у [tests/contract/test_excel_schema.py](file:///d:/2/tests/contract/test_excel_schema.py) (перевірка назв 3 аркушів, точної послідовності колонок, форматів чисел та автофільтрів відповідно до [contracts/excel_schema.md](file:///d:/2/specs/001-bond-yield-analyzer/contracts/excel_schema.md))
+- [x] T014 [P] [US2] Створити модульні тести сервісу збереження у [tests/unit/test_excel_storage.py](file:///d:/2/tests/unit/test_excel_storage.py) (автоматичне створення файлу з нуля, оновлення існуючого файлу, перевірка правила дедуплікації для «Історії котирувань», збереження виплат за складеним ключем `ISIN + Дата + Тип`)
+- [x] T015 [P] [US2] Створити інтеграційний тест транзакційності та блокування файлу у [tests/integration/test_file_locking.py](file:///d:/2/tests/integration/test_file_locking.py) (захист від пошкодження, перехоплення `PermissionError` при відкритому файлі, видалення `.bonds.xlsx.tmp`)
 
 ### Реалізація для Користувацької історії 2
 
-- [ ] T016 [US2] Реалізувати генератор нової книги Excel зі структурою 3 аркушів, стилізацією заголовків та налаштуванням ширини колонок у [src/bond_collector/excel.py](file:///d:/2/src/bond_collector/excel.py) (підтримка автостворення файлу з нуля при відсутності за FR-004 та FR-013)
-- [ ] T017 [US2] Реалізувати алгоритм недеструктивного оновлення (upsert) для аркуша «Актуальні котирування» та збереження знятих випусків у [src/bond_collector/excel.py](file:///d:/2/src/bond_collector/excel.py)
-- [ ] T018 [US2] Реалізувати механізм щоденної дедуплікації для аркуша «Історія котирувань» у [src/bond_collector/excel.py](file:///d:/2/src/bond_collector/excel.py) (запобігання дублікатам записів за поточну дату при незмінних цінах та залишках)
-- [ ] T019 [US2] Реалізувати алгоритм недеструктивної синхронізації для аркуша «Графік виплат» у [src/bond_collector/excel.py](file:///d:/2/src/bond_collector/excel.py) (довічне збереження минулих виплат, оновлення статусів «Заплановано»/«Виплачено»)
-- [ ] T020 [US2] Реалізувати активацію автофільтрів Excel (`AutoFilter`) на всіх трьох аркушах та атомарне збереження книги через тимчасовий файл `.bonds.xlsx.tmp` з перейменуванням `os.replace` та діагностикою `PermissionError` у [src/bond_collector/excel.py](file:///d:/2/src/bond_collector/excel.py)
+- [x] T016 [US2] Реалізувати генератор нової книги Excel зі структурою 3 аркушів, стилізацією заголовків та налаштуванням ширини колонок у [src/bond_collector/excel.py](file:///d:/2/src/bond_collector/excel.py) (підтримка автостворення файлу з нуля при відсутності за FR-004 та FR-013)
+- [x] T017 [US2] Реалізувати алгоритм недеструктивного оновлення (upsert) для аркуша «Актуальні котирування» та збереження знятих випусків у [src/bond_collector/excel.py](file:///d:/2/src/bond_collector/excel.py)
+- [x] T018 [US2] Реалізувати механізм щоденної дедуплікації для аркуша «Історія котирувань» у [src/bond_collector/excel.py](file:///d:/2/src/bond_collector/excel.py) (запобігання дублікатам записів за поточну дату при незмінних цінах та залишках)
+- [x] T019 [US2] Реалізувати алгоритм недеструктивної синхронізації для аркуша «Графік виплат» у [src/bond_collector/excel.py](file:///d:/2/src/bond_collector/excel.py) (довічне збереження минулих виплат, оновлення статусів «Заплановано»/«Виплачено»)
+- [x] T020 [US2] Реалізувати активацію автофільтрів Excel (`AutoFilter`) на всіх трьох аркушах та атомарне збереження книги через тимчасовий файл `.bonds.xlsx.tmp` з перейменуванням `os.replace` та діагностикою `PermissionError` у [src/bond_collector/excel.py](file:///d:/2/src/bond_collector/excel.py)
 
 **Контрольна точка**: Користувацькі історії 1 та 2 повністю інтегровані та перевірені.
 
