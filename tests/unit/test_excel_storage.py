@@ -60,8 +60,9 @@ class TestExcelStorage:
         ws_curr1 = wb1["Актуальні котирування"]
         assert ws_curr1.max_row == 2
         assert ws_curr1.cell(row=2, column=1).value == "UA4000227185"
-        assert ws_curr1.cell(row=2, column=7).value == 1050.00
-        assert ws_curr1.cell(row=2, column=11).value == 1000
+        assert ws_curr1.cell(row=2, column=7).value == "На вітрині (Купівля)"
+        assert ws_curr1.cell(row=2, column=8).value == 1050.00
+        assert ws_curr1.cell(row=2, column=12).value == 1000
 
         ws_hist1 = wb1["Історія котирувань"]
         assert ws_hist1.max_row == 2
@@ -99,8 +100,8 @@ class TestExcelStorage:
         wb3 = openpyxl.load_workbook(file_path)
         ws_curr3 = wb3["Актуальні котирування"]
         assert ws_curr3.max_row == 2
-        assert ws_curr3.cell(row=2, column=7).value == 1060.00
-        assert ws_curr3.cell(row=2, column=11).value == 800
+        assert ws_curr3.cell(row=2, column=8).value == 1060.00
+        assert ws_curr3.cell(row=2, column=12).value == 800
 
         # В історії запис за цей день оновився новими значеннями
         ws_hist3 = wb3["Історія котирувань"]
@@ -175,7 +176,7 @@ class TestExcelStorage:
         delisted_status = None
         for row in range(2, ws_curr.max_row + 1):
             if ws_curr.cell(row=row, column=1).value == "UA4000227193":
-                delisted_status = ws_curr.cell(row=row, column=12).value
+                delisted_status = ws_curr.cell(row=row, column=13).value
         assert delisted_status == "Знято з торгів / Погашено"
 
         # У графіку виплат минула виплата збережена, а нова додана!

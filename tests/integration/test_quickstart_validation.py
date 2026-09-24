@@ -59,8 +59,9 @@ class TestQuickstartScenarios:
         # Перевірка даних на першому аркуші
         ws_curr = wb["Актуальні котирування"]
         assert ws_curr.cell(row=2, column=1).value == "UA4000227185"
-        assert ws_curr.cell(row=2, column=11).value == 85217
-        assert ws_curr.cell(row=2, column=12).value == "В наявності"
+        assert ws_curr.cell(row=2, column=7).value == "На вітрині (Купівля)"
+        assert ws_curr.cell(row=2, column=12).value == 85217
+        assert ws_curr.cell(row=2, column=13).value == "В наявності"
         assert ws_curr.auto_filter.ref is not None
 
     def test_quickstart_file_locked_handling(self, tmp_path: Path, monkeypatch, capsys):

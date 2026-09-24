@@ -39,6 +39,7 @@ HEADERS_CURRENT = [
     "Дата погашення",
     "Днів до погашення",
     "Військова облігація",
+    "Вітрина сайту",
     "Ціна купівлі (з НКД)",
     "Дохідність купівлі (% річних)",
     "Ціна зворотного викупу банком",
@@ -127,6 +128,7 @@ class ExcelStorage(BaseStorage):
                 bond.maturity_date.strftime("%Y-%m-%d"),
                 bond.days_to_maturity,
                 "Так" if bond.is_military else "Ні",
+                bond.showcase_status,
                 bond.price_buy,
                 (bond.rate_buy / 100.0) if bond.rate_buy is not None else None,
                 bond.price_sell,
@@ -148,7 +150,7 @@ class ExcelStorage(BaseStorage):
         # Зняті випуски не видаляються, а позначаються як "Знято з торгів / Погашено"
         for isin, r_idx in existing_rows.items():
             if isin not in incoming_isins and bonds:
-                ws.cell(row=r_idx, column=12, value="Знято з торгів / Погашено")
+                ws.cell(row=r_idx, column=13, value="Знято з торгів / Погашено")
 
     def _update_quote_history(self, ws: Any, bonds: List[Bond]) -> None:
         """Додає або оновлює історичний зріз із дедуплікацією за поточний день."""

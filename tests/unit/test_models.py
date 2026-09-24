@@ -116,6 +116,31 @@ class TestBondModel:
                 updated_at=datetime.now(),
             )
 
+    def test_bond_showcase_status(self):
+        bond_on_showcase = Bond(
+            isin="UA4000227185",
+            name="Військові облігації",
+            currency="UAH",
+            maturity_date=date(2027, 5, 26),
+            is_military=True,
+            price_buy=1056.23,
+            price_sell=995.10,
+        )
+        assert bond_on_showcase.is_on_showcase is True
+        assert bond_on_showcase.showcase_status == "На вітрині (Купівля)"
+
+        bond_repurchase_only = Bond(
+            isin="UA4000237242",
+            name="Військові облігації",
+            currency="USD",
+            maturity_date=date(2027, 4, 15),
+            is_military=True,
+            price_buy=None,
+            price_sell=1021.91,
+        )
+        assert bond_repurchase_only.is_on_showcase is False
+        assert bond_repurchase_only.showcase_status == "Тільки зворотний викуп"
+
 
 @pytest.mark.unit
 class TestPriceSnapshot:

@@ -78,6 +78,19 @@ class Bond:
             return "В наявності"
         return "Розпродано"
 
+    @property
+    def is_on_showcase(self) -> bool:
+        """Чи відображається облігація на вітрині каталогу купівлі сайту Приват24."""
+        return self.price_buy is not None
+
+    @property
+    def showcase_status(self) -> str:
+        """Людинозчитуваний статус присутності на вітрині Приват24 (вітрина купівлі чи тільки викуп)."""
+        if self.price_buy is not None:
+            return "На вітрині (Купівля)"
+        return "Тільки зворотний викуп"
+
+
 
 @dataclass
 class PriceSnapshot:

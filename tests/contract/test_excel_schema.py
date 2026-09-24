@@ -24,7 +24,7 @@ class TestExcelSchemaContract:
         assert "Історія котирувань" in sheet_names
         assert "Графік виплат" in sheet_names
 
-        # Перевірка 15 колонок для «Актуальні котирування»
+        # Перевірка 16 колонок для «Актуальні котирування»
         ws_current = wb["Актуальні котирування"]
         current_headers = [cell.value for cell in ws_current[1]]
         expected_current = [
@@ -34,6 +34,7 @@ class TestExcelSchemaContract:
             "Дата погашення",
             "Днів до погашення",
             "Військова облігація",
+            "Вітрина сайту",
             "Ціна купівлі (з НКД)",
             "Дохідність купівлі (% річних)",
             "Ціна зворотного викупу банком",
