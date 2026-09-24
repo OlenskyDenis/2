@@ -83,12 +83,12 @@
 
 ### Тести для CLI & UX
 
-- [ ] T021 [P] Створити інтеграційний тест CLI-інтерфейсу у [tests/integration/test_cli_flow.py](file:///d:/2/tests/integration/test_cli_flow.py) (перевірка запуску за замовчуванням, прапорця `--output`, прапорця `--json`, кодів завершення 0/1/2 та розділення потоків `stdout` і `stderr` відповідно до [contracts/cli.md](file:///d:/2/specs/001-bond-yield-analyzer/contracts/cli.md))
+- [x] T021 [P] Створити інтеграційний тест CLI-інтерфейсу у [tests/integration/test_cli_flow.py](file:///d:/2/tests/integration/test_cli_flow.py) (перевірка запуску за замовчуванням, прапорця `--output`, прапорця `--json`, кодів завершення 0/1/2 та розділення потоків `stdout` і `stderr` відповідно до [contracts/cli.md](file:///d:/2/specs/001-bond-yield-analyzer/contracts/cli.md))
 
 ### Реалізація CLI & Windows UX
 
-- [ ] T022 Реалізувати точку входу CLI у [src/cli/main.py](file:///d:/2/src/cli/main.py) (обробка аргументів, зв'язування `CollectorService` та `ExcelStorage`, трансляція україномовного прогресу в `stdout`, вивід помилок блокування файлу та діагностики виключно в `stderr`, підтримка коду повернення 0 при успіху та 1 при помилках)
-- [ ] T023 Створити командний файл швидкого запуску [run.bat](file:///d:/2/run.bat) у корені репозиторію (кодування консолі `chcp 65001 > nul` для підтримки української мови, перевірка встановленого Python у системі, запуск `python -m src.cli.main %*` та команда `pause` перед закриттям)
+- [x] T022 Реалізувати точку входу CLI у [src/cli/main.py](file:///d:/2/src/cli/main.py) (обробка аргументів, зв'язування `CollectorService` та `ExcelStorage`, трансляція україномовного прогресу в `stdout`, вивід помилок блокування файлу та діагностики виключно в `stderr`, підтримка коду повернення 0 при успіху та 1 при помилках)
+- [x] T023 Створити командний файл швидкого запуску [run.bat](file:///d:/2/run.bat) у корені репозиторію (кодування консолі `chcp 65001 > nul` для підтримки української мови, перевірка встановленого Python у системі, запуск `python -m src.cli.main %*` та команда `pause` перед закриттям)
 
 ---
 
