@@ -8,9 +8,9 @@
 
 **Мета**: Ініціалізація базової структури проекту, оточення та конфігурації інструментів тестування.
 
-- [ ] T001 Створити структуру каталогів проекту (`src/bond_collector/`, `src/cli/`, `tests/unit/`, `tests/contract/`, `tests/integration/`) згідно з планом у [plan.md](file:///d:/2/specs/001-bond-yield-analyzer/plan.md)
-- [ ] T002 Створити файл залежностей [requirements.txt](file:///d:/2/requirements.txt) із бібліотеками `requests>=2.31.0`, `openpyxl>=3.1.0` та `pytest>=8.0.0`
-- [ ] T003 [P] Створити файл конфігурації тестування [pytest.ini](file:///d:/2/pytest.ini) із реєстрацією маркерів та шляхів пошуку тестів
+- [x] T001 Створити структуру каталогів проекту (`src/bond_collector/`, `src/cli/`, `tests/unit/`, `tests/contract/`, `tests/integration/`) згідно з планом у [plan.md](file:///d:/2/specs/001-bond-yield-analyzer/plan.md)
+- [x] T002 Створити файл залежностей [requirements.txt](file:///d:/2/requirements.txt) із бібліотеками `requests>=2.31.0`, `openpyxl>=3.1.0` та `pytest>=8.0.0`
+- [x] T003 [P] Створити файл конфігурації тестування [pytest.ini](file:///d:/2/pytest.ini) із реєстрацією маркерів та шляхів пошуку тестів
 
 ---
 
@@ -20,10 +20,10 @@
 
 **⚠️ КРИТИЧНО**: Реалізація історій користувача не може розпочатися до завершення цієї фази.
 
-- [ ] T004 [P] Створити модульні тести моделей даних у [tests/unit/test_models.py](file:///d:/2/tests/unit/test_models.py) (валідація атрибутів `Bond`, `PriceSnapshot`, `CashFlowEvent`, розрахунок статусу доступності `В наявності` / `Розпродано` на основі `count`)
-- [ ] T005 Реалізувати доменні датакласи `Bond`, `PriceSnapshot` та `CashFlowEvent` у [src/bond_collector/models.py](file:///d:/2/src/bond_collector/models.py) відповідно до [data-model.md](file:///d:/2/specs/001-bond-yield-analyzer/data-model.md)
-- [ ] T006 [P] Створити тести базових інтерфейсів джерел даних та сховища у [tests/unit/test_interfaces.py](file:///d:/2/tests/unit/test_interfaces.py)
-- [ ] T007 Реалізувати базові абстрактні класи та протоколи `BaseBondSource` та `BaseStorage` у [src/bond_collector/interfaces.py](file:///d:/2/src/bond_collector/interfaces.py) для забезпечення Принципу I Конституції (Library-First)
+- [x] T004 [P] Створити модульні тести моделей даних у [tests/unit/test_models.py](file:///d:/2/tests/unit/test_models.py) (валідація атрибутів `Bond`, `PriceSnapshot`, `CashFlowEvent`, розрахунок статусу доступності `В наявності` / `Розпродано` на основі `count`)
+- [x] T005 Реалізувати доменні датакласи `Bond`, `PriceSnapshot` та `CashFlowEvent` у [src/bond_collector/models.py](file:///d:/2/src/bond_collector/models.py) відповідно до [data-model.md](file:///d:/2/specs/001-bond-yield-analyzer/data-model.md)
+- [x] T006 [P] Створити тести базових інтерфейсів джерел даних та сховища у [tests/unit/test_interfaces.py](file:///d:/2/tests/unit/test_interfaces.py)
+- [x] T007 Реалізувати базові абстрактні класи та протоколи `BaseBondSource` та `BaseStorage` у [src/bond_collector/interfaces.py](file:///d:/2/src/bond_collector/interfaces.py) для забезпечення Принципу I Конституції (Library-First)
 
 **Контрольна точка**: Доменні моделі та протоколи готові — можна переходити до реалізації історій користувачів.
 
