@@ -38,14 +38,14 @@
 ### Тести для Користувацької історії 1 (TDD) ⚠️
 > **ПРАВИЛО TDD: Тести пишуться ПЕРШИМИ та повинні падати до написання коду реалізації**
 
-- [ ] T008 [P] [US1] Створити контрактний тест формату відповідей ендпоінтів Приват24 (`init`, `bargaining`, `limits`, `operations`) у [tests/contract/test_api_contract.py](file:///d:/2/tests/contract/test_api_contract.py) згідно з [contracts/privat24_api.md](file:///d:/2/specs/001-bond-yield-analyzer/contracts/privat24_api.md)
-- [ ] T009 [P] [US1] Створити модульні тести клієнта Приват24 у [tests/unit/test_client.py](file:///d:/2/tests/unit/test_client.py) з мокуванням відповідей HTTP (успішне опитування, оновлення сесії при `session_was_expired`, обробка збоїв мережі retry, коректний парсинг `count: 0` для розкуплених випусків)
+- [x] T008 [P] [US1] Створити контрактний тест формату відповідей ендпоінтів Приват24 (`init`, `bargaining`, `limits`, `operations`) у [tests/contract/test_api_contract.py](file:///d:/2/tests/contract/test_api_contract.py) згідно з [contracts/privat24_api.md](file:///d:/2/specs/001-bond-yield-analyzer/contracts/privat24_api.md)
+- [x] T009 [P] [US1] Створити модульні тести клієнта Приват24 у [tests/unit/test_client.py](file:///d:/2/tests/unit/test_client.py) з мокуванням відповідей HTTP (успішне опитування, оновлення сесії при `session_was_expired`, обробка збоїв мережі retry, коректний парсинг `count: 0` для розкуплених випусків)
 
 ### Реалізація для Користувацької історії 1
 
-- [ ] T010 [US1] Реалізувати клас `Privat24Client` у [src/bond_collector/client.py](file:///d:/2/src/bond_collector/client.py) (метод `init_session` для отримання `xref` та `pubkey`, метод `get_bonds` для виклику `bargaining`, метод `get_limits` для виклику `limits` з обов'язковим `operation=s`, метод `get_operations` для виклику `operations`)
-- [ ] T011 [US1] Додати до `Privat24Client` у [src/bond_collector/client.py](file:///d:/2/src/bond_collector/client.py) обробку затримок мікро-троттлінгу (плаваючий jitter 50-100 мс між запитами), таймаути 10 с, автоматичний retry до 2 спроб та оновлення сесії при коді 95
-- [ ] T012 [US1] Реалізувати координаційний сервіс `CollectorService` у [src/bond_collector/service.py](file:///d:/2/src/bond_collector/service.py) для пакетного опитування всіх паперів каталогу та агрегації результатів у доменні моделі `Bond` з підтримкою часткової відмовостійкості (Graceful degradation)
+- [x] T010 [US1] Реалізувати клас `Privat24Client` у [src/bond_collector/client.py](file:///d:/2/src/bond_collector/client.py) (метод `init_session` для отримання `xref` та `pubkey`, метод `get_bonds` для виклику `bargaining`, метод `get_limits` для виклику `limits` з обов'язковим `operation=s`, метод `get_operations` для виклику `operations`)
+- [x] T011 [US1] Додати до `Privat24Client` у [src/bond_collector/client.py](file:///d:/2/src/bond_collector/client.py) обробку затримок мікро-троттлінгу (плаваючий jitter 50-100 мс між запитами), таймаути 10 с, автоматичний retry до 2 спроб та оновлення сесії при коді 95
+- [x] T012 [US1] Реалізувати координаційний сервіс `CollectorService` у [src/bond_collector/service.py](file:///d:/2/src/bond_collector/service.py) для пакетного опитування всіх паперів каталогу та агрегації результатів у доменні моделі `Bond` з підтримкою часткової відмовостійкості (Graceful degradation)
 
 **Контрольна точка**: Користувацька історія 1 повністю функціональна та протестована в ізоляції.
 
