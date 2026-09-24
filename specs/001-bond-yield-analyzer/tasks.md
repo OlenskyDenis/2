@@ -98,8 +98,8 @@
 
 **Незалежний тест**: Запуск тестів заглушок підтверджує наявність відкритих точок розширення без конфліктів із основним пайплайном.
 
-- [ ] T024 [P] [US3] Створити модульні тести для точок розширення та заглушок у [tests/unit/test_stubs.py](file:///d:/2/tests/unit/test_stubs.py)
-- [ ] T025 [US3] Реалізувати модульні заглушки `MultiBrokerAdapter`, `SchedulerStub` та `YieldCalculatorStub` у [src/bond_collector/stubs.py](file:///d:/2/src/bond_collector/stubs.py) згідно з вимогами FR-008 специфікації
+- [x] T024 [P] [US3] Створити модульні тести для точок розширення та заглушок у [tests/unit/test_stubs.py](file:///d:/2/tests/unit/test_stubs.py)
+- [x] T025 [US3] Реалізувати модульні заглушки `MultiBrokerAdapter`, `SchedulerStub` та `YieldCalculatorStub` у [src/bond_collector/stubs.py](file:///d:/2/src/bond_collector/stubs.py) згідно з вимогами FR-008 специфікації
 
 ---
 
@@ -107,10 +107,10 @@
 
 **Мета**: Фінальна валідація проекту, наскрізне тестування згідно з `quickstart.md`, підтвердження суворого дотримання мовної політики Конституції (Принцип VI) та перевірка живого збору.
 
-- [ ] T026 [P] Створити наскрізний інтеграційний тест перевірки сценаріїв валідації з [quickstart.md](file:///d:/2/specs/001-bond-yield-analyzer/quickstart.md) у [tests/integration/test_quickstart_validation.py](file:///d:/2/tests/integration/test_quickstart_validation.py)
-- [ ] T027 Запустити повний набір автоматизованих тестів (`pytest`) та переконатися у 100% успішному проходженні
-- [ ] T028 Перевірити виконання Принципу VI Конституції: усі тексти інтерфейсу, логи у консолі, коментарі та помилки у [src/cli/main.py](file:///d:/2/src/cli/main.py) та [src/bond_collector/](file:///d:/2/src/bond_collector/) складені українською мовою
-- [ ] T029 Виконати тестовий запуск [run.bat](file:///d:/2/run.bat) у живому середовищі, перевірити створення файлу [bonds.xlsx](file:///d:/2/bonds.xlsx) та коректність заповнення всіх 3 аркушів реальними даними ОВДП
+- [x] T026 [P] Створити наскрізний інтеграційний тест перевірки сценаріїв валідації з [quickstart.md](file:///d:/2/specs/001-bond-yield-analyzer/quickstart.md) у [tests/integration/test_quickstart_validation.py](file:///d:/2/tests/integration/test_quickstart_validation.py)
+- [x] T027 Запустити повний набір автоматизованих тестів (`pytest`) та переконатися у 100% успішному проходженні
+- [x] T028 Перевірити виконання Принципу VI Конституції: усі тексти інтерфейсу, логи у консолі, коментарі та помилки у [src/cli/main.py](file:///d:/2/src/cli/main.py) та [src/bond_collector/](file:///d:/2/src/bond_collector/) складені українською мовою
+- [x] T029 Виконати тестовий запуск [run.bat](file:///d:/2/run.bat) у живому середовищі, перевірити створення файлу [bonds.xlsx](file:///d:/2/bonds.xlsx) та коректність заповнення всіх 3 аркушів реальними даними ОВДП
 
 ---
 
